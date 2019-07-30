@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+const log = console.log;
+let twoSum = function(nums, target) {
+    const tIndex = new Map();
+	
+    for(let i = 0 ; i < nums.length ; i ++) {
+        let complement = target - nums[i];
+        if(tIndex.has(complement)) {
+        	return [tIndex.get(complement), i ];
+        }
+        tIndex.set(nums[i], i)
+    }
+};
+
+log( twoSum([2, 7, 11, 15], 9) );
+
+</script>
+</body>
+</html>
